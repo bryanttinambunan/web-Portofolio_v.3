@@ -1,0 +1,39 @@
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+  <div class="section-label anim-reveal">02 — Engineering Work</div>
+
+  <!-- PROJECT FILTER BUTTONS -->
+  <div class="projects-filter anim-reveal" style="animation-delay:0.1s">
+    <button class="filter-btn active" data-filter="all">Semua</button>
+    <button class="filter-btn" data-filter="tag-web">Web Dev</button>
+    <button class="filter-btn" data-filter="tag-data">Data Analytics</button>
+    <button class="filter-btn" data-filter="tag-blockchain">Blockchain</button>
+    <button class="filter-btn" data-filter="tag-infra">Infrastructure</button>
+  </div>
+
+  {% for project in data.projects %}
+  <div class="project-item anim-reveal" data-delay="{{ loop.index0 * 0.12 + 0.2 }}s">
+    <div class="project-glare"></div>
+    <div class="project-index">0{{ project.id }}</div>
+    <div class="project-main">
+      <div class="project-meta">
+        <span class="project-year">{{ project.year }}</span>
+        <span class="project-tag {{ project.tag_class }}">{{ project.tag }}</span>
+      </div>
+      <h3 class="project-title">{{ project.title }}</h3>
+      <p class="project-story">{{ project.story | safe }}</p>
+      
+      <div class="project-challenge {{ project.challenge_class }}">
+        <div class="challenge-label">Core Challenge</div>
+        <div class="challenge-text">{{ project.challenge_text }}</div>
+      </div>
+      <div class="project-stack">
+        {% for tech in project.stack %}
+        <span class="stack-item">{{ tech }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="project-arrow">↗</div>
+  </div>
+  {% endfor %}
+</section>

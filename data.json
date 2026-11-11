@@ -1,0 +1,83 @@
+{
+  "skills": [
+    { "name": "PHP / Laravel", "class": "" },
+    { "name": "Python", "class": "data" },
+    { "name": "MySQL / Query Opt.", "class": "" },
+    { "name": "Apache Spark", "class": "data" },
+    { "name": "REST API Design", "class": "" },
+    { "name": "Hadoop HDFS", "class": "data" },
+    { "name": "MVC Architecture", "class": "" },
+    { "name": "Google BigQuery", "class": "data" },
+    { "name": "Git / Version Control", "class": "" },
+    { "name": "Blockchain Analytics", "class": "data" }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "year": "2024",
+      "tag": "Web Dev",
+      "tag_class": "tag-web",
+      "title": "\"Ask Me\" — Forum Discussion Platform",
+      "story": "Forum berbasis Laravel yang lahir dari satu pertanyaan sederhana: <strong>mengapa platform diskusi akademik yang ada terasa lamban?</strong> Saya merancang arsitektur dari nol — memperhatikan setiap lapisan dari routing hingga autoloading vendor, memastikan setiap query ke database melewati filter optimasi sebelum mencapai pengguna akhir.",
+      "challenge_class": "",
+      "challenge_text": "Mengelola autoloading Composer yang membengkak seiring skala, mengoptimasi N+1 query pada relasi thread-comment, dan merancang navigasi yang terasa instan meski data terus tumbuh.",
+      "stack": ["PHP 8", "Laravel 10", "MySQL", "Blade Templating", "Eloquent ORM", "Query Optimization"]
+    },
+    {
+      "id": 2,
+      "year": "2024",
+      "tag": "Data Analytics",
+      "tag_class": "tag-data",
+      "title": "YouTube Sentiment Analysis — Mapping Public Opinion",
+      "story": "Jutaan komentar YouTube tersimpan di balik layar infinite scroll yang terus memanjang. Proyek ini dimulai dari pertanyaan yang membuat saya penasaran: <strong>apa yang sebenarnya dirasakan orang-orang di kolom komentar?</strong> Saya membangun pipeline scraping di Google Colab menggunakan Python, lalu menerapkan analisis sentimen untuk memetakan emosi publik dari data mentah yang tidak terstruktur.",
+      "challenge_class": "data-type",
+      "challenge_text": "Mengatasi kendala infinite scroll YouTube yang mencegah scraping otomatis konvensional, serta menangani noise dalam data komentar (slang, emoji, mixed-language Indonesia-Inggris) yang mempersulit klasifikasi sentimen.",
+      "stack": ["Python", "Google Colab", "BeautifulSoup", "NLTK / TextBlob", "Pandas", "Matplotlib"]
+    },
+    {
+      "id": 3,
+      "year": "2024",
+      "tag": "Blockchain Analytics",
+      "tag_class": "tag-blockchain",
+      "title": "Solana On-Chain Wallet Analytics — Segmenting the Blockchain",
+      "story": "Blockchain adalah database terbuka yang paling jujur — setiap transaksi tercatat, tidak ada yang disembunyikan. Saya menganalisis <strong>data on-chain dompet kripto di jaringan Solana</strong>, menerapkan K-Means clustering untuk memisahkan pola perilaku wallet: siapa trader aktif, siapa long-term holder, dan siapa bot. Hasil segmentasi divisualisasikan dengan distribusi klaster yang dapat diinterpretasi secara bisnis.",
+      "challenge_class": "blockchain-type",
+      "challenge_text": "Menentukan jumlah klaster optimal menggunakan Elbow Method dan Silhouette Score secara bersamaan — dua metrik yang terkadang memberikan sinyal yang berbeda, membutuhkan pertimbangan kontekstual yang cermat.",
+      "stack": ["Python", "Scikit-learn", "K-Means", "Solana RPC API", "Elbow Method", "Seaborn"]
+    },
+    {
+      "id": 4,
+      "year": "2024",
+      "tag": "Big Data Infrastructure",
+      "tag_class": "tag-infra",
+      "title": "Distributed Data Engineering Pipeline — Dari Spark ke BigQuery",
+      "story": "Ini bukan sekadar pipeline — ini adalah <strong>orkestra infrastruktur data terdistribusi</strong>. Saya membangun lingkungan pemrosesan data berskala besar dari awal: konfigurasi environment variable Apache Spark, mengelola distributed storage di Hadoop HDFS, memproses file dalam format Parquet untuk efisiensi kolumnar, hingga mengalirkan hasil akhir ke Google BigQuery untuk analisis skala cloud.",
+      "challenge_class": "infra-type",
+      "challenge_text": "Menyeimbangkan konfigurasi memory Spark yang tepat agar tidak terjadi OOM error pada worker nodes, sekaligus memastikan konsistensi schema antara file Parquet lokal dan tabel BigQuery yang menerima data streaming.",
+      "stack": ["Apache Spark", "Hadoop HDFS", "Parquet", "Google BigQuery", "PySpark", "Bash Scripting"]
+    }
+  ],
+  "labs": [
+    {
+      "num": "01",
+      "icon": "⬡",
+      "title": "Database Systems Lab",
+      "desc": "Eksplorasi mendalam dari normalisasi skema, indexing strategy, dan query plan optimization di MySQL. Belajar membaca EXPLAIN dan mengubah full table scan menjadi index range scan.",
+      "tech": ["MySQL", "SQL Indexing", "Query Plan", "Normalisasi"]
+    },
+    {
+      "num": "02",
+      "icon": "◈",
+      "title": "Operating Systems Lab",
+      "desc": "Simulasi dan implementasi algoritma penjadwalan proses (FCFS, SJF, Round Robin), manajemen memori, dan studi deadlock pada sistem operasi berbasis Linux.",
+      "tech": ["C / C++", "Process Scheduling", "Linux", "Deadlock"]
+    },
+    {
+      "num": "03",
+      "icon": "◎",
+      "title": "Algorithm Optimization",
+      "desc": "Benchmarking dan analisis kompleksitas algoritma sorting dan searching, serta implementasi struktur data non-linear (binary tree, graph traversal) untuk problem set akademik.",
+      "tech": ["Python", "Big-O Analysis", "Graph Theory", "Binary Tree"]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+<!-- LAB -->
+<section class="lab-section" id="lab">
+  
+  <!-- Academic Fundamental Labs Grid -->
+  <div class="lab-fundamental-container">
+    <div class="section-label anim-reveal">03 — Laboratory & Experiments</div>
+    <h2 class="lab-main-title anim-reveal" style="animation-delay:0.1s">Ruang Eksperimen <em>& Software Showcase</em></h2>
+    <p class="anim-reveal" style="animation-delay:0.2s; font-size:15px; color:var(--text-secondary); max-width:640px; line-height:1.8; margin-bottom:40px;">
+      Eksperimen fundamental dari ruang kelas UNIMED — tempat di mana konsep core computer science diuji, dibongkar, dan diterapkan ke dalam showcase proyek interaktif.
+    </p>
+
+    <div class="lab-grid">
+      {% for lab in data.labs %}
+      <div class="lab-card anim-reveal anim-scale" data-num="{{ lab.num }}" data-delay="{{ loop.index0 * 0.12 + 0.3 }}">
+        <div class="lab-card-icon">{{ lab.icon }}</div>
+        <h3>{{ lab.title }}</h3>
+        <p>{{ lab.desc }}</p>
+        <div class="lab-tech">
+          {% for tech in lab.tech %}
+          <span>{{ tech }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.lab-card[data-delay]').forEach(function (card) {
+        card.style.animationDelay = card.dataset.delay + 's';
+      });
+    });
+  </script>
+
+  <!-- Interactive Project Showcase (Clickable Tab / Carousel Gallery) -->
+  <div class="lab-showcase-container">
+    
+    <!-- Header -->
+    <div class="lab-showcase-header anim-reveal">
+      <div class="section-sublabel">Interactive Showcase Gallery</div>
+      <h3 style="font-family: var(--font-display); font-size: 24px; color: var(--text-primary); margin-top: 4px;">
+        4 Featured Laboratory Projects
+      </h3>
+    </div>
+
+    <!-- Navigation Tabs (Clickable) -->
+    <div class="lab-tabs anim-reveal" style="animation-delay:0.1s">
+      <button class="lab-tab-btn active" data-index="0">
+        <span class="tab-num">01</span>
+        <span class="tab-title">Warung Makan Mutiara</span>
+      </button>
+      <button class="lab-tab-btn" data-index="1">
+        <span class="tab-num">02</span>
+        <span class="tab-title">Software Planning Assistant</span>
+      </button>
+      <button class="lab-tab-btn" data-index="2">
+        <span class="tab-num">03</span>
+        <span class="tab-title">PCD Hand Gesture</span>
+      </button>
+      <button class="lab-tab-btn" data-index="3">
+        <span class="tab-num">04</span>
+        <span class="tab-title">CekKata.ID</span>
+      </button>
+    </div>
+
+    <!-- Project Content Viewport -->
+    <div class="lab-viewport">
+      
+      <!-- Project 1: Warung Makan -->
+      <div class="lab-project-card project-warung active" data-card="0">
+        <div class="lab-project-bg-num">01</div>
+        <div class="lab-project-content">
+          <div class="lab-project-info">
+            <span class="lab-project-category">Web Development / UI Design</span>
+            <h3>Warung Makan Mutiara</h3>
+            <p>Landing page interaktif untuk restoran dengan katalog menu makanan. Desain hangat dengan nuansa orange dan cream yang modern.</p>
+            <div class="lab-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+          <div class="lab-project-visual">
+            <div class="lab-img-reveal-wrapper">
+              <div class="lab-project-mockup">
+                <img src="{{ url_for('static', filename='img/labs/warung_makan.png') }}" alt="Warung Makan Mutiara">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Software Planning Assistant -->
+      <div class="lab-project-card project-spa" data-card="1">
+        <div class="lab-project-bg-num">02</div>
+        <div class="lab-project-content">
+          <div class="lab-project-info">
+            <span class="lab-project-category">Software Engineering / Project Mgt</span>
+            <h3>Software Planning Assistant</h3>
+            <p>Dashboard manajemen proyek dan task monitoring interaktif dengan sidebar berwarna, tracking progress tim, dan manajemen tugas.</p>
+            <div class="lab-tech">
+              <span>Python</span>
+              <span>Streamlit</span>
+              <span>Pandas</span>
+            </div>
+          </div>
+          <div class="lab-project-visual">
+            <div class="lab-img-reveal-wrapper">
+              <div class="lab-project-mockup">
+                <img src="{{ url_for('static', filename='img/labs/software_planning.png') }}" alt="Software Planning Assistant">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Hand Gesture -->
+      <div class="lab-project-card project-gesture" data-card="2">
+        <div class="lab-project-bg-num">03</div>
+        <div class="lab-project-content">
+          <div class="lab-project-info">
+            <span class="lab-project-category">Computer Vision / Image Processing</span>
+            <h3>PCD Hand Gesture</h3>
+            <p>Sistem pengenalan gestur tangan secara real-time menggunakan komputer visi dengan tampilan futuristik dark dan aksen cyan neon.</p>
+            <div class="lab-tech">
+              <span>Python</span>
+              <span>OpenCV</span>
+              <span>MediaPipe</span>
+            </div>
+          </div>
+          <div class="lab-project-visual">
+            <div class="lab-img-reveal-wrapper">
+              <div class="lab-project-mockup">
+                <img src="{{ url_for('static', filename='img/labs/hand_gesture.png') }}" alt="Hand Gesture Control">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: CekKata.ID -->
+      <div class="lab-project-card project-cekkata" data-card="3">
+        <div class="lab-project-bg-num">04</div>
+        <div class="lab-project-content">
+          <div class="lab-project-info">
+            <span class="lab-project-category">Artificial Intelligence / NLP</span>
+            <h3>CekKata.ID</h3>
+            <p>Platform analisis sentimen dan pengolahan bahasa alami (NLP) berbasis AI dengan tema emerald green untuk evaluasi teks Bahasa Indonesia.</p>
+            <div class="lab-tech">
+              <span>Python</span>
+              <span>NLP</span>
+              <span>AI</span>
+            </div>
+          </div>
+          <div class="lab-project-visual">
+            <div class="lab-img-reveal-wrapper">
+              <div class="lab-project-mockup">
+                <img src="{{ url_for('static', filename='img/labs/cekkata.png') }}" alt="CekKata.ID">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Prev/Next Controls -->
+    <div class="lab-controls anim-reveal" style="animation-delay:0.2s">
+      <button class="lab-nav-btn prev-btn" id="lab-prev-btn">← Prev Project</button>
+      <div class="lab-progress-text">
+        <span id="lab-curr-num">01</span> / 04
+      </div>
+      <button class="lab-nav-btn next-btn" id="lab-next-btn">Next Project →</button>
+    </div>
+
+  </div>
+</section>

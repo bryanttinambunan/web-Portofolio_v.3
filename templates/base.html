@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bryant Tinambunan — Web Architect & Data Engineer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- LOAD CUSTOM THEME CSS -->
+  <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- CINEMATIC MINIMALIST PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-ambient"></div>
+    <div class="preloader-center">
+      <div class="preloader-word-wrap">
+        <span class="preloader-word" id="preloader-word">Hello.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC CURSOR OVERLAYS -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- DYNAMIC LANYARD STRAP SVG OVERLAY -->
+  <svg id="lanyard-strap-svg" class="lanyard-strap-svg" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 99; overflow: visible;">
+    <defs>
+      <!-- Gradient for the lanyard strap rope to make it look premium & 3D -->
+      <linearGradient id="strap-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#2a2a30" />
+        <stop offset="40%" stop-color="var(--accent)" />
+        <stop offset="60%" stop-color="var(--accent)" />
+        <stop offset="100%" stop-color="#141418" />
+      </linearGradient>
+      
+      <!-- Drop shadow for the lanyard strap to give it real depth on top of webpage elements -->
+      <filter id="strap-shadow" x="-25%" y="-25%" width="150%" height="150%">
+        <feDropShadow dx="2" dy="6" stdDeviation="5" flood-color="#000000" flood-opacity="0.65"/>
+      </filter>
+    </defs>
+    
+    <!-- The dynamic Bezier path representing the retractable thread -->
+    <path id="lanyard-strap-path" d="M 0 0" fill="none" stroke="url(#strap-gradient)" stroke-width="3.5" filter="url(#strap-shadow)" stroke-linecap="round"/>
+  </svg>
+
+
+  <!-- INCLUDE MODULAR COMPONENTS -->
+  {% include 'navbar.html' %}
+  {% include 'hero.html' %}
+  {% include 'about.html' %}
+  {% include 'projects.html' %}
+  {% include 'labs.html' %}
+  {% include 'contact.html' %}
+  {% include 'footer.html' %}
+
+  <!-- FLOATING THEME ACCENT SWITCHER -->
+  <button class="theme-switcher-toggle" id="theme-switcher-toggle" title="Kustomisasi Warna Aksen">
+    <span class="toggle-icon">🎨</span>
+  </button>
+
+  <div class="theme-switcher" id="theme-switcher">
+    <div class="theme-switcher-title">ACCENT GLOW</div>
+    <div class="theme-presets">
+      <button class="theme-btn active" data-color="#c8ff00" style="background: #c8ff00;" title="Acid Lime"></button>
+      <button class="theme-btn" data-color="#00c8ff" style="background: #00c8ff;" title="Data Cyan"></button>
+      <button class="theme-btn" data-color="#a97fff" style="background: #a97fff;" title="Solana Purple"></button>
+      <button class="theme-btn" data-color="#ff5733" style="background: #ff5733;" title="Fusion Orange"></button>
+    </div>
+    <div class="color-slider-container">
+      <input type="range" min="0" max="360" value="72" class="color-slider" id="color-hue-slider" title="Geser untuk kustomisasi warna spektrum">
+    </div>
+  </div>
+
+  <!-- PROJECT DETAIL MODAL DRAWER -->
+  <div class="project-modal" id="project-modal">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">×</button>
+      <div class="modal-header-container">
+        <div class="modal-meta">
+          <span class="modal-year" id="modal-year">2024</span>
+          <span class="modal-tag" id="modal-tag">Web Dev</span>
+        </div>
+        <h2 class="modal-title" id="modal-title">Project Title</h2>
+      </div>
+      <div class="modal-body-content">
+        <div class="modal-section-title">SYSTEM ARCHITECTURE & FLOW</div>
+        <p id="modal-architecture" class="modal-text">System architecture details...</p>
+        
+        <div class="modal-section-title">KEY ACHIEVEMENTS & METRICS</div>
+        <ul id="modal-metrics" class="modal-list">
+          <li>Optimized queries by 45%.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING AI CHATBOT WIDGET -->
+  <div class="chatbot-widget" id="chatbot-widget">
+    <!-- Chat Bubble Button -->
+    <button class="chat-bubble" id="chat-bubble" title="Tanya AI Assistant Bryant">
+      <span class="bubble-icon">💬</span>
+      <span class="bubble-ping"></span>
+    </button>
+    
+    <!-- Chat Window -->
+    <div class="chat-window" id="chat-window">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">🤖</div>
+          <div>
+            <div class="chat-bot-name">B.T AI Assistant</div>
+            <div class="chat-bot-status">Online</div>
+          </div>
+        </div>
+        <button class="chat-close" id="chat-close-btn">×</button>
+      </div>
+      
+      <div class="chat-body" id="chat-body">
+        <div class="chat-msg bot">
+          <div class="msg-text">Halo! Saya adalah AI Assistant portofolio Bryant Tinambunan. Tanyakan apa saja tentang skill Laravel/Python, pendidikan di UNIMED, atau proyek rekayasa yang dikerjakannya!</div>
+        </div>
+      </div>
+      
+      <div class="chat-footer">
+        <input type="text" id="chat-input" placeholder="Tulis pertanyaan..." autocomplete="off">
+        <button id="chat-send-btn">➔</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP FLOATING BUTTON -->
+  <button class="back-to-top" id="back-to-top" title="Kembali ke Atas">↑</button>
+
+  <!-- COPY TO CLIPBOARD TOAST NOTIFICATION -->
+  <div class="toast" id="toast">Email Bryant berhasil disalin! 📋</div>
+
+  <!-- DYNAMIC LAB CARD DRAWER -->
+  <div class="lab-drawer" id="lab-drawer">
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="drawer-content">
+      <button class="drawer-close" id="drawer-close">×</button>
+      <div class="drawer-header">
+        <span class="drawer-num" id="drawer-num">01</span>
+        <h2 class="drawer-title" id="drawer-title">Lab Title</h2>
+      </div>
+      <div class="drawer-body">
+        <div class="drawer-section-title">DIAGNOSTICS & EXPERIMENTAL LOGS</div>
+        <p id="drawer-diagnostics" class="drawer-text">Eksperimen detail...</p>
+        
+        <div class="drawer-section-title">LABORATORY EXPERIMENT CODE</div>
+        <pre class="drawer-code"><code id="drawer-code-block">Loading code...</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOAD CUSTOM INTERACTIVE SCRIPTS -->
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>

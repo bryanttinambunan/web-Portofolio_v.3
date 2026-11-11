@@ -1,0 +1,36 @@
+<!-- ABOUT -->
+<section class="about-strip" id="about">
+  <div class="about-left">
+    <div class="section-label anim-reveal">01 — Tentang Saya</div>
+    <h2 class="anim-reveal" style="animation-delay:0.1s">Antara baris kode dan <em>baris data</em>,<br>saya menemukan jawaban.</h2>
+    <div class="about-image-container anim-reveal anim-scale" style="animation-delay:0.2s">
+      <div class="about-image-frame">
+        <img src="{{ url_for('static', filename='profile.png') }}" alt="Bryant Tinambunan" class="about-profile-img">
+        <div class="about-image-glare"></div>
+      </div>
+      <div class="about-image-tech-label">
+        <span class="tech-spec">SYS.OPER: ACTIVE</span>
+        <span class="tech-spec">LOC: 3.5952° N, 98.6722° E</span>
+      </div>
+    </div>
+  </div>
+  <div class="about-right">
+    <p class="anim-reveal" style="animation-delay:0.15s">
+      Saya adalah mahasiswa Ilmu Komputer di <strong>Universitas Negeri Medan (UNIMED)</strong> yang menjalani dua dunia sekaligus: membangun aplikasi web yang skalabel menggunakan <strong>Python dan HTML/CSS</strong>, sekaligus menyelami infrastruktur data berskala besar dengan <strong>Python dan ekosistem Big Data</strong>.
+    </p>
+    <p class="anim-reveal" style="animation-delay:0.25s">
+      Bagi saya, coding bukan sekadar menulis fungsi — ini adalah seni merancang sistem yang mampu <strong>bertahan di bawah beban nyata</strong>, dan data bukan sekadar angka — ini adalah narasi yang menunggu untuk dibaca dengan tepat.
+    </p>
+    <div class="skills-grid">
+      {% for skill in data.skills %}
+      <div class="skill-pill {{ skill.class }} anim-reveal anim-stagger" data-delay="{{ loop.index0 * 0.07 + 0.3 }}"><span class="dot"></span>{{ skill.name }}</div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.skill-pill[data-delay]').forEach((element) => {
+    element.style.animationDelay = `${element.dataset.delay}s`;
+  });
+</script>

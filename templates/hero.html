@@ -1,0 +1,108 @@
+<!-- HERO -->
+<section class="hero hero-loading" id="hero">
+  <div class="hero-bg-grid">
+    <canvas id="hero-canvas"></canvas>
+  </div>
+  <div class="hero-accent-line"></div>
+
+  <div class="hero-tag hero-entrance" data-delay="100">Medan, Indonesia — 2025</div>
+
+  <h1 class="hero-headline">
+    <span class="line"><span class="hero-entrance" data-delay="200">I craft</span></span>
+    <span class="line"><span class="hero-entrance" data-delay="320"><em class="accent-stroke">architectures</em></span></span>
+    <span class="line"><span class="hero-entrance" data-delay="440">& <em class="accent-color">decode</em> data.</span></span>
+  </h1>
+
+  <div class="hero-bottom">
+    <p class="hero-desc hero-entrance" data-delay="580">
+      <strong> Bryant Tinambunan</strong> — Computer Science student at UNIMED.<br>
+      Saya membangun <span id="typewriter-text" style="border-right: 2px solid var(--accent); padding-right: 4px; font-weight: 400; color: var(--text-primary); animation: blink 0.75s step-end infinite;"></span><br>
+      Dua kekuatan, satu tujuan: <strong>membuat teknologi bekerja lebih cerdas.</strong>
+    </p>
+    <div class="hero-cta hero-entrance" data-delay="720">
+      <a href="#projects" class="btn-primary">Lihat Karya</a>
+      <a href="#contact" class="btn-ghost">Hubungi Saya</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint hero-entrance" data-delay="900">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+
+  <!-- INTERACTIVE LANYARD REEL & CARD -->
+  <div id="lanyard-reel" class="lanyard-reel" title="Tarik badge lanyard!"></div>
+  <div id="lanyard-card" class="lanyard-card">
+    <div class="lanyard-clip-container">
+      <div class="lanyard-clip-metal"></div>
+      <div class="lanyard-clip-strap-hole"></div>
+    </div>
+    
+    <div class="lanyard-card-inner">
+      <div class="lanyard-glow-border"></div>
+      
+      <div class="lanyard-card-header">
+        <div class="lanyard-logo">B<span>.</span>T</div>
+        <div class="lanyard-status">
+          <span class="status-glow"></span>
+          <span class="status-text">SYS.ACCESS: ACTIVE</span>
+        </div>
+      </div>
+      
+      <div class="lanyard-photo-area">
+        <div class="lanyard-photo-holder">
+          <img src="{{ url_for('static', filename='lanyard_profile.jpg') }}" alt="Bryant Tinambunan">
+          <div class="lanyard-photo-glare"></div>
+        </div>
+      </div>
+      
+      <div class="lanyard-info-area">
+        <div class="lanyard-name">Bryant Tinambunan</div>
+        <div class="lanyard-title">Web Architect & Data Eng.</div>
+        <div class="lanyard-dept">DEPT: COMPUTER SCIENCE / UNIMED</div>
+      </div>
+      
+      <div class="lanyard-card-footer">
+        <div class="lanyard-barcode">
+          <svg viewBox="0 0 100 20" preserveAspectRatio="none">
+            <g fill="var(--text-primary)" opacity="0.8">
+              <rect x="0" width="2" height="20" />
+              <rect x="3" width="1" height="20" />
+              <rect x="5" width="4" height="20" />
+              <rect x="10" width="1" height="20" />
+              <rect x="12" width="2" height="20" />
+              <rect x="15" width="1" height="20" />
+              <rect x="17" width="3" height="20" />
+              <rect x="21" width="1" height="20" />
+              <rect x="23" width="4" height="20" />
+              <rect x="28" width="2" height="20" />
+              <rect x="31" width="1" height="20" />
+              <rect x="33" width="2" height="20" />
+              <rect x="36" width="3" height="20" />
+              <rect x="40" width="1" height="20" />
+              <rect x="42" width="4" height="20" />
+              <rect x="47" width="1" height="20" />
+              <rect x="49" width="2" height="20" />
+              <rect x="52" width="1" height="20" />
+              <rect x="54" width="3" height="20" />
+              <rect x="58" width="1" height="20" />
+              <rect x="60" width="4" height="20" />
+              <rect x="65" width="2" height="20" />
+              <rect x="68" width="1" height="20" />
+              <rect x="70" width="2" height="20" />
+              <rect x="73" width="3" height="20" />
+              <rect x="77" width="1" height="20" />
+              <rect x="79" width="4" height="20" />
+              <rect x="84" width="2" height="20" />
+              <rect x="87" width="1" height="20" />
+              <rect x="89" width="3" height="20" />
+              <rect x="93" width="1" height="20" />
+              <rect x="95" width="5" height="20" />
+            </g>
+          </svg>
+        </div>
+        <div class="lanyard-card-num">NO. 1211.2005.UNIMED</div>
+      </div>
+    </div>
+  </div>
+</section>
